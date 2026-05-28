@@ -42,7 +42,7 @@ const MovieList = (props) => {
         }
 
         if (user?.terrorLevel === "pesado") {
-          params.with_genres = "9648,80,18";
+          params.with_genres = "18,80,9648";
         }
       }
 
@@ -62,14 +62,6 @@ const MovieList = (props) => {
       } else {
         response = await tmdbApi.similar(props.category, props.id);
       }
-
-      // if (response && response.results) {
-      //   response.results = response.results.filter((item) => {
-      //     const hasKidsGenre = item.genre_ids?.some(id => [16, 35, 10751].includes(id));
-
-      //     return !hasKidsGenre
-      //   })
-      // }
 
       setItems(response.results);
     };

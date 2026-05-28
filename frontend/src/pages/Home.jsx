@@ -45,7 +45,7 @@ const Home = () => {
 
         <div className="section mb-3">
           <div className="section__header mb-2">
-            <h2>Baseado nas suas avaliações</h2>
+            <h2>Filmes baseados nas suas avaliações</h2>
           </div>
           <RecommendedForYou category="movie" />
         </div>
@@ -73,7 +73,7 @@ const Home = () => {
 
         <div className="section mb-3">
           <div className="section__header mb-2">
-            <h2>Baseado nas suas avaliações</h2>
+            <h2>Séries baseadas nas suas avaliações</h2>
           </div>
           <RecommendedForYou category="tv" />
         </div>
