@@ -27,21 +27,6 @@ app.get("/", (req, res) => {
   res.send("API HorrorFlix funcionando");
 });
 
-app.get("/api/clear-redis", async (req, res) => {
-  try {
-    if (typeof redisClient.flushall === "function") {
-      await redisClient.flushall();
-    } else if (typeof redisClient.flushAll === "function") {
-      await redisClient.flushAll();
-    } else {
-      throw new Error("Não foi possível encontrar a função flush no seu cliente do Redis.");
-    }
-    
-  } catch (err) {
-    res.status(500).send("Erro ao resetar o Redis: " + err.message);
-  }
-});
-
 const PORT = 5000;
 
 connectDB();

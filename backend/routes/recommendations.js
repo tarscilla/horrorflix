@@ -7,6 +7,10 @@ const MINHA_TMDB_KEY = process.env.TMDB_KEY;
 
 router.get("/:email", async (req, res) => {
   try {
+    if (!MINHA_TMDB_KEY) {
+      console.error("⚠️ ERRO: A variável TMDB_API_KEY não foi encontrada no arquivo .env do backend!");
+    }
+
     const email = req.params.email;
     const key = `fear:user:${email}`;
     const watched = await redisClient.hGetAll(key);
